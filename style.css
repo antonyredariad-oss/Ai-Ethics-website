@@ -1,0 +1,139 @@
+/* ==========================================
+   تنسيقات الصفحة الرئيسية - مسابقة 2026
+   ========================================== */
+
+body {
+    /* الخروج بنقطتين من مجلد css والدخول لمجلد img لقراءة الصورة بشكل سليم */
+    background-image: url('../img/istockphoto-2258806553-1024x1024.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important; /* تجعل الصورة ثابتة شيك أثناء التمرير */
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* تنظيف خلفيات الأقسام الافتراضية لبوتستراب لكي تظهر الصورة من تحتها */
+#principles, #comparison, #faq {
+    background-color: transparent !important;
+}
+
+/* تأثير الطبقة الشفافة الداكنة لقسم الهيدر (Hero Section) لتبرز النصوص */
+#home {
+    background: rgba(17, 24, 39, 0.85) !important;
+    backdrop-filter: blur(5px);
+    border-bottom: 3px solid #0d6efd;
+}
+
+/* ==========================================
+   تأثيرات زجاجية شيك جداً للبطاقات (Cards)
+   ========================================== */
+.card {
+    background: rgba(255, 255, 255, 0.88) !important;
+    backdrop-filter: blur(10px) ;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    border-radius: 15px !important;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease !important;
+}
+
+/* حركة انسيابية فخمة عند مرور الماوس فوق الكرت */
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* ==========================================
+   تنسيق الجدول (Table) ليكون مريح للعين ومندمج
+   ========================================== */
+.table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.table {
+    background-color: rgba(255, 255, 255, 0.93) !important;
+    margin-bottom: 0 !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05) !important;
+    transition: background-color 0.2s ease;
+}
+
+/* ==========================================
+   تنسيق العناوين لتبرز بوضوح فوق الخلفية
+   ========================================== */
+h2.text-center {
+    color: #0f172a !important;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* خط ديكوري صغير تحت العناوين الرئيسية لشغل محترفين */
+h2.text-center::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #0d6efd;
+    border-radius: 2px;
+}
+
+.faq-section {
+    background-color: #f8f9fa;
+}
+
+.faq-accordion .accordion-item {
+    border: none !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: #ffffff;
+}
+
+.faq-accordion .accordion-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.faq-accordion .accordion-button {
+    font-size: 1.05rem;
+    color: #2b3035;
+    background-color: #ffffff;
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+    color: #0d6efd;
+    background-color: #eef5ff;
+    font-weight: bold;
+}
+
+.faq-accordion .accordion-body {
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
+    color: #495057;
+    line-height: 1.7;
+    background-color: #ffffff;
+}
+
+.faq-accordion .accordion-body ul {
+    padding-right: 1.2rem;
+    margin-bottom: 0;
+}
+
+.faq-accordion .accordion-body ul li {
+    margin-bottom: 0.5rem;
+}

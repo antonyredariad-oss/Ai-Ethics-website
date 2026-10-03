@@ -1,139 +1,154 @@
-/* ==========================================
-   تنسيقات الصفحة الرئيسية - مسابقة 2026
-   ========================================== */
 
 body {
-    /* الخروج بنقطتين من مجلد css والدخول لمجلد img لقراءة الصورة بشكل سليم */
-    background-image: url('../img/istockphoto-2258806553-1024x1024.jpg') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important; /* تجعل الصورة ثابتة شيك أثناء التمرير */
-    min-height: 100vh;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    overflow-x: hidden;
 }
 
-/* تنظيف خلفيات الأقسام الافتراضية لبوتستراب لكي تظهر الصورة من تحتها */
-#principles, #comparison, #faq {
-    background-color: transparent !important;
+/* شريط التنقل الزجاجي */
+.navbar {
+    background-color: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* تأثير الطبقة الشفافة الداكنة لقسم الهيدر (Hero Section) لتبرز النصوص */
+.navbar-brand {
+    font-size: 1.35rem;
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    -background-clip: text;
+    -text-fill-color: transparent;
+    border-radius: 15px;
+}
+
+.nav-link {
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #38bdf8 !important;
+    transform: translateY(-2px);
+}
+
+/* الهيدر الرئيسي مع خلفية مضاءة */
 #home {
-    background: rgba(17, 24, 39, 0.85) !important;
-    backdrop-filter: blur(5px);
-    border-bottom: 3px solid #0d6efd;
-}
-
-/* ==========================================
-   تأثيرات زجاجية شيك جداً للبطاقات (Cards)
-   ========================================== */
-.card {
-    background: rgba(255, 255, 255, 0.88) !important;
-    backdrop-filter: blur(10px) ;
-    border: 1px solid rgba(255, 255, 255, 0.5) !important;
-    border-radius: 15px !important;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease !important;
-}
-
-/* حركة انسيابية فخمة عند مرور الماوس فوق الكرت */
-.card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
-    background: rgba(255, 255, 255, 0.95) !important;
-}
-
-/* ==========================================
-   تنسيق الجدول (Table) ليكون مريح للعين ومندمج
-   ========================================== */
-.table-responsive {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.table {
-    background-color: rgba(255, 255, 255, 0.93) !important;
-    margin-bottom: 0 !important;
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(0, 0, 0, 0.02) !important;
-}
-
-.table-hover tbody tr:hover {
-    background-color: rgba(13, 110, 253, 0.05) !important;
-    transition: background-color 0.2s ease;
-}
-
-/* ==========================================
-   تنسيق العناوين لتبرز بوضوح فوق الخلفية
-   ========================================== */
-h2.text-center {
-    color: #0f172a !important;
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%) !important;
     position: relative;
-    padding-bottom: 10px;
+    overflow: hidden;
+    border-bottom: 3px solid #0284c7;
 }
 
-/* خط ديكوري صغير تحت العناوين الرئيسية لشغل محترفين */
-h2.text-center::after {
-    content: "";
+#home::before {
+    content: '';
     position: absolute;
-    bottom: 0;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* زر استكشف المبادئ الجذاب (shadow__btn) */
+.shadow__btn {
+    display: inline-block;
+    padding: 14px 38px;
+    border: none;
+    font-size: 1.1rem;
+    color: #ffffff !important;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.35s ease;
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
+    background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+}
+
+.shadow__btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(2, 132, 199, 0.6);
+    background: linear-gradient(135deg, #0369a1 0%, #1d4ed8 100%);
+}
+
+/* عناوين الأقسام */
+section h2 {
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    display: block;
     width: 60px;
-    height: 3px;
-    background-color: #0d6efd;
+    height: 4px;
+    background: linear-gradient(90deg, #0284c7, #38bdf8);
     border-radius: 2px;
+    margin: 10px auto 0;
 }
 
-.faq-section {
-    background-color: #f8f9fa;
+/* كروت المبادئ الأخلاقية */
+.card {
+    border-radius: 20px !important;
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: #ffffff;
+    border: 1px solid #e2e8f0 !important;
 }
 
-.faq-accordion .accordion-item {
-    border: none !important;
-    border-radius: 12px !important;
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px rgba(2, 132, 199, 0.12) !important;
+    border-color: #38bdf8 !important;
+}
+
+/* جدول مقارنة السلوكيات */
+.table-responsive {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.table thead {
+    background: linear-gradient(135deg, #0f172a, #1e293b) !important;
+}
+
+.table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(56, 189, 248, 0.06) !important;
+}
+
+/* الأسئلة الشائعة (Accordion) */
+.accordion-item {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px !important;
     overflow: hidden;
     transition: all 0.3s ease;
-    background: #ffffff;
 }
 
-.faq-accordion .accordion-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+.accordion-item:hover {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.08) !important;
 }
 
-.faq-accordion .accordion-button {
+.accordion-button {
     font-size: 1.05rem;
-    color: #2b3035;
-    background-color: #ffffff;
     padding: 1.2rem 1.5rem;
-    border-radius: 12px !important;
-    box-shadow: none !important;
-}
-
-.faq-accordion .accordion-button:not(.collapsed) {
-    color: #0d6efd;
-    background-color: #eef5ff;
-    font-weight: bold;
-}
-
-.faq-accordion .accordion-body {
-    padding: 1.25rem 1.5rem;
-    font-size: 1rem;
-    color: #495057;
-    line-height: 1.7;
     background-color: #ffffff;
+    color: #0f172a;
 }
 
-.faq-accordion .accordion-body ul {
-    padding-right: 1.2rem;
-    margin-bottom: 0;
+.accordion-button:not(.collapsed) {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe) !important;
+    color: #0284c7 !important;
+    box-shadow: none;
 }
 
-.faq-accordion .accordion-body ul li {
-    margin-bottom: 0.5rem;
+.accordion-body {
+    padding: 1.2rem 1.5rem;
+    line-height: 1.8;
+    color: #475569;
 }
